@@ -2,7 +2,6 @@ const fetch = require('node-fetch');
 const moment = require('moment');
 const chalk = require('chalk');
 const rs = require('readline-sync');
-const chalkRainbow = require('chalk-rainbow')
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -28,26 +27,18 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 (async () => {
 
-  console.log(chalkGreen(`
-───────────▄▄▄▄▄▄▄▄▄───────────
-░██████╗░█████╗░███████╗███████╗
-██╔════╝██╔══██╗██╔════╝██╔════╝
-╚█████╗░███████║█████╗░░█████╗░░
-░╚═══██╗██╔══██║██╔══╝░░██╔══╝░░
-██████╔╝██║░░██║██║░░░░░███████╗
-╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚══════╝
-By : ${('VICENZO')}
-`));
+  console.log(`Trophy And Crown Hack Safe! [ReEdit]
+By : ${chalk.bold('xDast#8745')} - Credit : @dkmpostor & @Eskey
+`);
 
-  const auth = rs.question(chalkYellow('Masukkan Auth Token Anda : '));
+  const auth = rs.question('Enter Authentication Code! : ');
   console.log('');
 
   while (true) {
 
+
     const result = await GoStumble(auth);
     if (!result) {
-
-      console.log(chalkGreen(`\r[ ${moment().format('HH:mm:ss')} ] Auth Eror !`));
 
     } else if (result.includes('User')) {
 
@@ -57,17 +48,11 @@ By : ${('VICENZO')}
       const trophy = data.User.SkillRating;
       const crown = data.User.Crowns;
 
-      console.log(chalkWhite(`\r
--  [${moment().format('HH:mm:ss')}]  -
->  ${(`Negara By Lana : ${country}`)}
->  ${(`Nama By Lana : ${username}`)}  
->  ${(`Piala By Lana : ${trophy}`)}  
->  ${(`Mahkota By Lana : ${crown}`)}
->  ${(`Status : Success !`)}`));
-      await sleep(6500);
+console.log(chalk.bgBlack(`\r[ ${moment().format('HH:mm:ss')} ] ${chalk.white(`User : ${username}`)} | ${chalk.yellow(`Trophy : ${trophy}`)} | ${chalk.red(`Crown : ${crown}`)}`));
+      await sleep(6000);
 
     } else if (result == 'BANNED') {
-      console.log(chalk.bgRed(`Mampus Banned Makanya jangan brutal`));
+      console.log(chalk.bgRed(`Your Account has been Banned`));
      break;
     }
   }
