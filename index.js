@@ -39,7 +39,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 By : ${('VICENZO')}
 `));
 
-  const auth = rs.question(chalkYellow('Masukkan Auth Token Anda : ');
+  const auth = rs.question(chalkYellow('Masukkan Auth Token Anda : '));
   console.log('');
 
   while (true) {
