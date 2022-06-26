@@ -28,7 +28,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 (async () => {
 
-  console.log(chalkWhite(`
+  console.log(chalkGreen(`
 ───────────▄▄▄▄▄▄▄▄▄───────────
 ░██████╗░█████╗░███████╗███████╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝
@@ -57,9 +57,14 @@ By : ${('VICENZO')}
       const trophy = data.User.SkillRating;
       const crown = data.User.Crowns;
 
-console.log(chalk.bgBlack(`\r[ ${moment().format('HH:mm:ss')} ] ${chalk.yellow(`Nama Pengguna : ${username}`)} | ${chalk.yellow(`Negara : ${country}`)} | ${chalk.green(`Data Send : Berhasil`)} | ${chalk.blue(`Trophy : ${trophy}`)} | ${chalk.blue(`Mahkota : ${crown}`)}`));
-console.log(chalk.bgRed(`Mohon Maaf Akun Kamu Terban :v !`));
-      await sleep(5000);
+      console.log(chalkWhite(`\r
+-  [${moment().format('HH:mm:ss')}]  -
+>  ${(`Negara By Lana : ${country}`)}
+>  ${(`Nama By Lana : ${username}`)}  
+>  ${(`Piala By Lana : ${trophy}`)}  
+>  ${(`Mahkota By Lana : ${crown}`)}
+>  ${(`Status : Success !`)}`));
+      await sleep(6500);
 
     } else if (result == 'BANNED') {
       console.log(chalk.bgRed(`Mampus Banned Makanya jangan brutal`));
